@@ -1,0 +1,526 @@
+/**
+    * @name Disclutter
+    * @author b3hav1
+    * @version 1.0.0
+    * @description Lightweight clutter-free theme
+    * @source https://github.com/b3hav1/disclutter-theme
+    * @authorId 934759909130666014
+
+    Set Interface Density to Compact for the best experience
+    Settings > Interaction > Accessibility > Interface Density
+
+    Comment out `--message-width` to restore full message width
+    Avoid changing other variables unless adjusting UI density
+*/
+
+:root {
+    --message-width: 550px; /* Chat message max width */
+    --window-margin: 32px;  /* Inner window frame margin */
+    --guilds-margin: 8px;   /* Server list top margin */
+    --folder-scale: 0.85;   /* Server list folder scale */
+    --folder-gap: 4px;      /* Server list folder gap */
+    --section-margin: 6px;  /* Sidebar section margin */
+    --bot-l-margin: 2px;    /* Side bot tag left margin */
+    --bot-r-margin: 1px;    /* Side bot tag right margin */
+    --bot-lalt-margin: 3px; /* Chat bot tag left margin */
+    --bot-ralt-margin: 0px; /* Chat bot tag right margin */
+    --pill-gap: 0px;        /* Friends, Requests tab gap */
+    --pill-opacity: 0.7;    /* Add Friend button opacity */
+    --form-margin: 8px;     /* Add Friend form margin */
+    --list-margin: 14px;    /* Requests tab list margin */
+    --bio-gap: 16px;        /* Profile bio text item gap */
+    --bio-margin: 10px;     /* Profile bio bottom margin */
+    --text-gap: 2px;        /* Profile Member since line */
+
+    --window-margin-neg: calc(var(--window-margin) * -1);
+    --folder-gap-neg: calc(var(--folder-gap) * -1);
+    --section-margin-neg: calc(var(--section-margin) * -1);
+    --pill-gap-neg: calc(var(--pill-gap) * -1);
+    --form-margin-neg: calc(var(--form-margin) * -1);
+    --bio-margin-neg: calc(var(--bio-margin) * -1);
+
+    /*
+        --guilds-margin-neg: calc(var(--guilds-margin) * -1);
+        --bot-l-margin-neg: calc(var(--bot-l-margin) * -1);
+        --bot-r-margin-neg: calc(var(--bot-r-margin) * -1);
+        --bot-lalt-margin-neg: calc(var(--bot-lalt-margin) * -1);
+        --bot-ralt-margin-neg: calc(var(--bot-ralt-margin) * -1);
+        --list-margin-neg: calc(var(--list-margin) * -1);
+        --bio-gap-neg: calc(var(--bio-gap) * -1);
+        --text-gap-neg: calc(var(--text-gap) * -1);
+    */
+}
+
+/* #region Persistent */
+/* Window title */
+[class^="base_"] > [class^="bar_"] {
+    display: none !important;
+}
+
+/* Main window */
+[class^="app_"] {
+    margin-top: var(--window-margin-neg) !important;
+}
+
+/* Main sidebar */
+[class^="sidebarList_"] {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Servers list */
+[class*="guilds_"] {
+    margin-top: var(--guilds-margin) !important;
+}
+
+/* Servers list separator */
+[class^="listItem_"]:has(> [class^="guildSeparator_"]) {
+    display: none !important;
+}
+
+/* Servers list folders */
+[class^="folderHeader_"] {
+    scale: var(--folder-scale) !important;
+    margin-block: var(--folder-gap-neg) !important;
+}
+
+/* Profile buttons */
+[class^="panels_"] [class^="buttons_"] [class^="button_"] {
+    height: 0 !important;
+}
+
+/* Profile buttons chevrons */
+[class*="buttonChevron_"] {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Section - DM */
+/* Find Conversation button */
+[class^="privateChannels_"] > [class^="searchBar_"] {
+    display: none !important;
+}
+
+/* Nitro, Shop, Quests button */
+[class^="content_"]:has(> [class^="friendsButtonContainer_"]) {
+    &> :nth-child(n + 4):nth-child(-n + 7) {
+        display: none !important;
+    }
+}
+
+/* DM list separator */
+[class^="sectionDivider_"] {
+    margin-block: var(--section-margin) !important;
+}
+
+/* Direct Messages line */
+[class*="privateChannelsHeaderContainer_"] {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Section - Friends */
+/* Friends, Requests duplicated text */
+[class^="children_"]:has(> [class*="topPill"]) {
+    & > :nth-child(-n + 3) {
+        display: none !important;
+    }
+
+    /* Friends, Requests pill buttons */
+    & * {
+        background: none !important;
+        margin-inline: var(--pill-gap-neg) !important;
+    }
+}
+
+/* Add Friend button */
+[class*="addFriend_"] {
+    opacity: var(--pill-opacity) !important;
+}
+
+/* Friends list search bar */
+[class^="peopleColumn_"] > [class^="searchBar_"] {
+    display: none !important;
+}
+
+/* Friends pill duplicated text */
+[class^="sectionTitle_"] {
+    display: none !important;
+}
+
+/* Friends list separator */
+[class^="peopleList_"] > [class^="content_"] {
+    & > :nth-child(1 of [class^="divider_"]) {
+        display: none !important;
+    }
+}
+
+/* Friends list usernames */
+[class^="text_"] {
+    & > [class^="info_"] > :last-child {
+        display: none !important;
+    }
+
+    /* Friends list dots */
+    [class*="dot_"] {
+        display: none !important;
+    }
+}
+
+/* Friends list buttons */
+[class^="listItemContents_"] > [class^="actions_"] {
+    display: none !important;
+}
+
+/* Friends activity sidebar */
+[class^="nowPlayingColumn_"] {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Section - Add Friend */
+/* Add Friend Wumpus image */
+[class^="addFriendWumpusWrapper_"] {
+    display: none !important;
+}
+
+/* Add Friend input form */
+[class^="addFriendInputWrapper_"] {
+    border: none !important;
+    margin-inline: var(--form-margin-neg) !important;
+}
+
+/* Add Friend form separator */
+[class^="peopleColumn_"]:has(> [class^="header_"]) {
+    & > :first-child {
+        border: none !important;
+    }
+
+    /* Add Friend form subtext */
+    form > :nth-last-child(-n + 2) {
+        display: none !important;
+    }
+
+    /* Add Friend Discover section */
+    & > :nth-last-child(-n + 2) {
+        display: none !important;
+    }
+}
+/* #endregion */
+
+
+/* #region Section - Requests */
+/* Requests pill duplicate text */
+[class^="list_"] > [class^="content_"] {
+    &:has(> [class*="sectionTitle_"]) > :nth-child(-n + 2) {
+        display: none !important;
+    }
+}
+
+/* Requests list */
+[class^="list_"] {
+    padding-inline: var(--list-margin) !important;
+}
+
+/* Requests list timestamp */
+[class^="userContainerWithPreview_"] > :last-child {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Chat - Shared */
+/* Sidebar statuses */
+[class^="subText_"] {
+    display: none !important;
+}
+
+/* All clan tags */
+[class^="chipletContainerInner_"] {
+    display: none !important;
+}
+
+/* Sidebar bot tags */
+[class*="botTag_"] {
+    padding-left: var(--bot-l-margin) !important;
+    padding-right: var(--bot-r-margin) !important;
+
+    /* Bot tags text */
+    & * {
+        font-size: 0 !important;
+    }
+}
+
+/* Chat bot tags */
+[class^="botTagCozy_"],
+[class^="botTagCompact_"] {
+    padding-left: var(--bot-lalt-margin) !important;
+    padding-right: var(--bot-ralt-margin) !important;
+}
+
+/* Chat navigation text */
+[class^="navigationDescription_"] + [class^="container_"] {
+    display: none !important;
+}
+
+/* Chat messages text */
+[class*="messageContent_"],
+[class^="repliedMessage_"] {
+    max-width: var(--message-width) !important;
+}
+
+/* Chat reply avatars */
+[class^="replyAvatar_"] {
+    display: none !important;
+}
+
+/* Chat reply badges */
+[class^="replyBadge_"] {
+    display: none !important;
+}
+
+/* Chat mentions */
+[class^="mention"] {
+    background: none !important;
+}
+
+/* Chat reactions */
+[class^="reaction_"] {
+    border: none !important;
+}
+
+/* Add reaction button */
+[class^="reactionBtn_"] {
+    border: none !important;
+}
+
+/* Apps, Gift buttons */
+[class^="inner_"] [class^="buttons_"] {
+    & > :nth-last-child(5n + 1):nth-last-child(-n + 6) {
+        display: none !important;
+    }
+}
+/* #endregion */
+
+
+/* #region Chat - DM */
+/* DM toolbar avatar, nickname */
+[class^="children_"]:has(> [class^="avatar_"]) {
+    & > :nth-child(-n + 3) {
+        display: none !important;
+    }
+
+    /* DM toolbar status separator */
+    [class*="dot_"] {
+        display: none !important;
+    }
+
+    /* DM toolbar Call, Video buttons */
+    & + [class^="toolbar_"] > :nth-child(-n + 2) {
+        display: none !important;
+    }
+}
+
+/* DM toolbar status separator */
+[class^="dmHeaderActivityStatus_"] > :nth-child(2) {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Chat - Group */
+/* Group toolbar avatar */
+[class*="gdmIcon_"] {
+    display: none !important;
+}
+
+/* Group toolbar Call, Video buttons */
+[class^="children_"]:has([class^="hoverableContainer_"]) {
+    & + [class^="toolbar_"] > :nth-child(-n + 2) {
+        display: none !important;
+    }
+}
+
+/* Group sidebar members list */
+[class^="members_"]:has(> [class*="privateChannelMembersGroup_"]) {
+    margin-top: var(--section-margin) !important;
+
+    /* Group sidebar members count */
+    & > :first-child {
+        display: none !important;
+    }
+}
+
+/* Group sidebar Invite button */
+[class^="inviteToGroupButton_"] {
+    display: none !important;
+}
+/* #endregion */
+
+
+/* #region Chat - Server */
+/* Server roles badges */
+[class^="roleIcon_"] {
+    width: 0 !important;
+}
+
+/* Server New Member badge */
+[class^="newMemberBadge_"] {
+    display: none !important;
+}
+
+/* Server toolbar channel name */
+[class^="children_"]:has(> [class^="channelIcon_"]) {
+    & > :nth-child(-n + 4) {
+        display: none !important;
+    }
+
+    /* Server toolbar Threads, Notify buttons */
+    & + [class^="toolbar_"] > :nth-child(-n + 2) {
+        display: none !important;
+    }
+}
+
+/* Forum posts title */
+[class^="left_"] > [class^="body_"] {
+    gap: 0 !important;
+
+    /* Forum topicstarters */
+    & > [class^="message"] {
+        display: none !important;
+    }
+}
+
+/* Forum posts pin icon */
+[class^="pinIcon_"] {
+    display: none !important;
+}
+
+/* Members sidebar Activity button */
+[class*="membersGroup_"] {
+    &:has([data-list-item-id*="content-inventory"]) {
+        display: none !important;
+    }
+}
+
+/* Members sidebar separator */
+[class^="content_"]:has(> [class^="member_"]) {
+    margin-top: var(--section-margin-negative) !important;
+}
+/* #endregion */
+
+
+/* #region Sidebar - Server */
+/* Server Community button */
+[class^="guildIconV2Container"] {
+    display: none !important;
+}
+
+/* Server title chevron */
+[class^="headerChildren_"] {
+    display: none !important;
+}
+
+/* Server Boosts needed button */
+[class*="containerWithMargin_"] {
+    display: none !important;
+}
+
+/* Server Events button */
+[class^="containerDefault_"] {
+    &:has([id^="upcoming-events-"]) {
+        display: none !important;
+    }
+
+    /* Server Boosts button */
+    &:has([id^="skill-trees-"]) {
+        display: none !important;
+    }
+}
+
+/* Server sidebar separator */
+[class^="sectionDivider_"]:has(~ [class^="containerDefault_"]) {
+    display: none !important;
+}
+
+/* Server sidebar separator */
+div [style*="height: 8px"] {
+    height: var(--section-margin) !important;
+}
+/* #endregion */
+
+
+/* #region Sidebar - Profile */
+/* Profile banner buttons */
+[class^="bannerButton_"] {
+    display: none !important;
+}
+
+/* Profile status */
+[class^="header_"] [class^="outer_"] {
+    border: none !important;
+}
+
+/* Profile badges */
+[class^="usernameAndPronounsRow_"] > :last-child {
+    display: none !important;
+}
+
+/* Profile bio */
+[class^="body_"] {
+    gap: var(--bio-gap) !important;
+
+    /* Profile Member since */
+    & > :nth-last-child(2) {
+        align-items: center !important;
+        flex-direction: row !important;
+        gap: var(--text-gap) !important;
+        margin-bottom: var(--bio-margin-neg) !important;
+    }
+}
+
+/* Profile mutuals */
+[class^="mutuals_"] {
+    display: none !important;
+}
+
+/* Profile description */
+[class^="section_"] > [class*="truncated_"] {
+    max-height: none !important;
+    line-clamp: unset !important;
+    -webkit-line-clamp: unset !important;
+}
+
+/* Profile Full Bio line */
+[class^="viewFullBio_"] {
+    display: none !important;
+}
+
+/* Profile games overlay */
+[class^="displayCountText_"] {
+    display: none !important;
+}
+
+/* Profile games background */
+[class^="breadcrumb_"] [class^="icon_"] {
+    background: none !important;
+
+    /* Profile games icons */
+    img {
+        opacity: 1 !important;
+    }
+}
+
+/* Profile activity dots */
+[class^="headerContextMenu_"] {
+    display: none !important;
+}
+
+/* Profile footer button */
+[class^="redesignFooter_"] {
+    display: none !important;
+}
+/* #endregion */
