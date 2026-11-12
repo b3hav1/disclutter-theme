@@ -1,8 +1,8 @@
 /**
     * @name Disclutter
     * @author b3hav1
-    * @version 1.0.0
-    * @description Lightweight clutter-free theme
+    * @version 1.1.0
+    * @description Lightweight clutter-free layout theme
     * @source https://github.com/b3hav1/disclutter-theme
     * @authorId 934759909130666014
 
@@ -421,6 +421,11 @@
 
 /* Server title chevron */
 [class^="headerChildren_"] {
+    display: none !important;
+}
+
+/* Server Invite button */
+[class^="inviteButton_"] {
     display: none !important;
 }
 
