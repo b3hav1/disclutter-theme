@@ -1,8 +1,13 @@
 # Disclutter Theme
 
-![Preview](preview.png)
+<table>
+  <tr>
+    <td><img src="preview1.png" alt="Home Preview"></td>
+    <td><img src="preview2.png" alt="Chat Preview"></td>
+  </tr>
+</table>
 
-A lightweight, clutter-free theme for **Discord** designed to strip away visual noise and keep the interface clean. **Not a traditional color theme.** Disclutter strictly hides unnecessary UI elements and adjusts spacing.
+A lightweight, clutter-free theme for **Discord mod clients** designed to strip away visual noise and keep the interface clean. **Not a traditional color theme.** Disclutter does not change Discord's colors, fonts or overall design - it strictly hides unnecessary UI elements and adjusts spacing.
 
 *The solid blocks and bars shown in the preview screenshot are only used for data privacy, not part of the theme.*
 
@@ -22,7 +27,7 @@ For the best experience, enable **Compact** layout mode:
 
 ## Installation
 
-Make sure you have any Discord mod client installed, then:
+Make sure you have **Discord mod client** installed, then:
 1. Download the CSS file from this repository.
 2. Navigate to the **Themes** tab in your settings.
 3. Place the `.css` file into your themes folder.
