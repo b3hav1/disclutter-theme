@@ -14,25 +14,35 @@
 */
 
 :root {
+    /* User Tweaks */
     --message-width: 550px; /* Chat message max width */
+
+    /* Persistent */
     --window-margin: 32px;  /* Inner window frame margin */
     --guilds-margin: 8px;   /* Server list top margin */
     --folder-scale: 0.85;   /* Server list folder scale */
     --folder-gap: 4px;      /* Server list folder gap */
     --profile-radius: 7px;  /* Profile border radius */
+
+    /* Shared Chat */
     --section-margin: 6px;  /* Sidebar section margin */
     --bot-l-margin: 2px;    /* Side bot tag left margin */
     --bot-r-margin: 1px;    /* Side bot tag right margin */
     --bot-lalt-margin: 3px; /* Chat bot tag left margin */
     --bot-ralt-margin: 0px; /* Chat bot tag right margin */
+
+    /* Sections */
     --pill-gap: 0px;        /* Friends, Requests tab gap */
     --pill-opacity: 0.7;    /* Add Friend button opacity */
     --form-margin: 8px;     /* Add Friend form margin */
     --list-margin: 14px;    /* Requests tab list margin */
+
+    /* Profiles */
     --bio-gap: 16px;        /* Profile bio text item gap */
     --bio-margin: 10px;     /* Profile bio bottom margin */
     --text-gap: 2px;        /* Profile Member since line */
 
+    /* Math (do not touch) */
     --window-margin-neg: calc(var(--window-margin) * -1);
     --folder-gap-neg: calc(var(--folder-gap) * -1);
     --section-margin-neg: calc(var(--section-margin) * -1);
