@@ -1,7 +1,7 @@
 /**
     * @name Disclutter
     * @author b3hav1
-    * @version 1.1.0
+    * @version 1.2.0
     * @description Lightweight clutter-free layout theme
     * @source https://github.com/b3hav1/disclutter-theme
     * @authorId 934759909130666014
@@ -19,6 +19,7 @@
     --guilds-margin: 8px;   /* Server list top margin */
     --folder-scale: 0.85;   /* Server list folder scale */
     --folder-gap: 4px;      /* Server list folder gap */
+    --profile-radius: 7px;  /* Profile border radius */
     --section-margin: 6px;  /* Sidebar section margin */
     --bot-l-margin: 2px;    /* Side bot tag left margin */
     --bot-r-margin: 1px;    /* Side bot tag right margin */
@@ -82,6 +83,16 @@
 [class^="folderHeader_"] {
     scale: var(--folder-scale) !important;
     margin-block: var(--folder-gap-neg) !important;
+}
+
+/* Profile quests promotions */
+[data-testid^="quest-bar-container"] {
+    display: none !important;
+}
+
+/* Profile while quests active */
+[class*="containerQuestBarVisible_"] {
+    border-radius: var(--profile-radius) !important;
 }
 
 /* Profile buttons */
@@ -243,22 +254,26 @@
     display: none !important;
 }
 
-/* Sidebar bot tags */
+/* Sidebar verified bot tags */
 [class*="botTag_"] {
-    padding-left: var(--bot-l-margin) !important;
-    padding-right: var(--bot-r-margin) !important;
+    &:has(> svg) {
+        padding-left: var(--bot-l-margin) !important;
+        padding-right: var(--bot-r-margin) !important;
 
-    /* Bot tags text */
-    & * {
-        font-size: 0 !important;
+        /* Verified bot tags text */
+        & * {
+            font-size: 0 !important;
+        }
     }
 }
 
-/* Chat bot tags */
+/* Chat verified bot tags */
 [class^="botTagCozy_"],
 [class^="botTagCompact_"] {
-    padding-left: var(--bot-lalt-margin) !important;
-    padding-right: var(--bot-ralt-margin) !important;
+    &:has(> svg) {
+        padding-left: var(--bot-lalt-margin) !important;
+        padding-right: var(--bot-ralt-margin) !important;
+    }
 }
 
 /* Chat navigation text */
@@ -442,6 +457,11 @@
 
     /* Server Boosts button */
     &:has([id^="skill-trees-"]) {
+        display: none !important;
+    }
+
+    /* Server Center button */
+    &:has([id^="guild-space-tab-"]) {
         display: none !important;
     }
 }
