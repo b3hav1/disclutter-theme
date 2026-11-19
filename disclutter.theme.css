@@ -1,7 +1,7 @@
 /**
     * @name Disclutter
     * @author b3hav1
-    * @version 1.6.0
+    * @version 1.7.0
     * @description Lightweight clutter-free layout theme
     * @source https://github.com/b3hav1/disclutter-theme
     * @authorId 934759909130666014
@@ -508,6 +508,17 @@ u {
 /* Server sidebar separator */
 div [style*="height: 8px"] {
     height: var(--section-margin) !important;
+}
+
+/* Server Recommended category */
+[class*="containerDefault_"]:has([class*="dismissButton_"]) {
+    display: none !important;
+
+    /* Server Recommended channels */
+    & ~ *:not([class^="sectionDivider_"]):not([class^="containerDefault_"]
+    ~ [class^="sectionDivider_"] ~ *) {
+        display: none !important;
+    }
 }
 /* #endregion */
 
