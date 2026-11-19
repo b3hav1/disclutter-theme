@@ -1,7 +1,7 @@
 /**
     * @name Disclutter
     * @author b3hav1
-    * @version 1.4.0
+    * @version 1.5.0
     * @description Lightweight clutter-free layout theme
     * @source https://github.com/b3hav1/disclutter-theme
     * @authorId 934759909130666014
@@ -397,6 +397,11 @@ u {
 
 
 /* #region Chat - Server */
+/* Chat welcome button */
+[class^="welcomeCTA_"] {
+    display: none !important;
+}
+
 /* Server roles badges */
 [class^="roleIcon_"] {
     width: 0 !important;
