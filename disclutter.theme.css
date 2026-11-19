@@ -1,7 +1,7 @@
 /**
     * @name Disclutter
     * @author b3hav1
-    * @version 1.5.0
+    * @version 1.6.0
     * @description Lightweight clutter-free layout theme
     * @source https://github.com/b3hav1/disclutter-theme
     * @authorId 934759909130666014
@@ -76,6 +76,11 @@
 /* Main window */
 [class^="app_"] {
     margin-top: var(--window-margin-neg) !important;
+}
+
+/* Main window notice */
+[class^="notice_"] {
+    display: none !important;
 }
 
 /* Main sidebar */
