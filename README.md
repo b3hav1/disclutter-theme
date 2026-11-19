@@ -14,7 +14,7 @@ A lightweight, clutter-free theme for **Discord mod clients** designed to strip 
 ## Features
 
 * **Clutter-Free Navigation:** Hides promotional elements and redundant section headers or separators.
-* **Clean Chat & Messages:** Removes clan tags, Gift and Apps buttons, and improves readability.
+* **Clean Chat & Messages:** Removes clan tags, Gift and Apps buttons, and improves messages readability.
 * **Minimal Tabs & Profiles:** Declutters friend lists, profile badges, mutuals and unnecessary action buttons.
 * **Compact Window Layout:** Removes the top title bar and adjusts margins and folders for a tighter UI.
 
